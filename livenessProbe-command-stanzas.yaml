@@ -1,0 +1,10 @@
+...
+  livenessProbe:
+    exec:
+      command:
+      - /usr/bin/mongo
+      - --eval
+      - db.serverStatus()
+    initialDelaySeconds: 10
+    timeoutSeconds: 10
+...

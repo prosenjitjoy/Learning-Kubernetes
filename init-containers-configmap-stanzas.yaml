@@ -1,0 +1,15 @@
+...
+    initContainers:
+    - name: init-mongo
+      image: mongo
+      command:
+      - bash
+      - /config/init.sh
+      volumeMounts:
+      - name: config
+        mountPath: /config
+...
+    volumes:
+    - name: config
+      configMap:
+        name: "mongo-init"
